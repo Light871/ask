@@ -1,6 +1,6 @@
-<h1>Editing Question</h1>
+<% provide :page_title, 'Edit question' %>
+<% currently_at 'Questions' %>
 
-<%= render 'form', question: @question %>
+<h1 class="mb-4">Edit question</h1>
 
-<%= link_to 'Show', @question %> |
-<%= link_to 'Back', questions_path %>
+<%= render 'form' %>
