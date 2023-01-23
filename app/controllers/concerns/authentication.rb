@@ -12,6 +12,28 @@ module Authentication
       current_user.present?
     end
 
+    def require_no_authentication
+      return unless user_signed_in?
+
+      flash[:warning] = "You have already logged in!"
+      redirect_to root_path
+    end
+
+    def require_authentication
+      return if user_signed_in?
+
+      flash[:warning] = "You haven't logged in yet!"
+      redirect_to root_path
+    end
+
+    def sign_in(user)
+      session[:user_id] = user.id
+    end
+
+    def sign_out
+      session.delete :user_id
+    end
+
     helper_method :current_user, :user_signed_in?
   end
 end
