@@ -17,6 +17,9 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'pagy', '~> 6.0'
 gem 'draper', '~> 4.0'
 gem 'valid_email2', '~> 4.0'
+gem 'rubocop', '~> 1.44', require: false
+gem 'rubocop-rails', '~> 2.17', require: false
+gem 'rubocop-performance', '~> 1.15', require: false
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
