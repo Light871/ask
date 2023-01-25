@@ -32,7 +32,7 @@ module Admin
           zos.print render_to_string(
             layout: false, handlers: [:axlsx], formats: [:xlsx],
             template: 'admin/users/user', locals: { user: user }
-            )
+          )
         end
       end
 
