@@ -16,12 +16,14 @@ gem 'webpacker', '~> 5.0'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+gem 'caxlsx', '~> 3.3'
+gem 'caxlsx_rails', '~> 0.6'
 gem 'draper', '~> 4.0'
 gem 'pagy', '~> 6.0'
-gem 'rubocop', '~> 1.44', require: false
-gem 'rubocop-performance', '~> 1.15', require: false
-gem 'rubocop-rails', '~> 2.17', require: false
+gem 'rubyzip', '~> 2'
 gem 'valid_email2', '~> 4.0'
+gem 'rubyXL', '~> 3.4'
+gem 'activerecord-import', '~> 1.4'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -32,6 +34,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'faker', '~> 3'
+  gem 'pry-rails'
 end
 
 group :development do
@@ -39,6 +42,9 @@ group :development do
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'spring'
   gem 'web-console', '>= 4.1.0'
+  gem 'rubocop', '~> 1.44', require: false
+  gem 'rubocop-performance', '~> 1.15', require: false
+  gem 'rubocop-rails', '~> 2.17', require: false
 end
 
 group :test do
