@@ -46,6 +46,7 @@ group :development do
   gem 'rubocop-rails', '~> 2.17', require: false
   gem 'spring'
   gem 'web-console', '>= 4.1.0'
+  gem 'bullet'
 end
 
 group :test do
