@@ -11,6 +11,6 @@ en:
       title: "Welcome to AskIt!"
   questions:
     index:
-      title: "Вопросы"
+      title: "Questions"
   menu:
     home: "Home"
