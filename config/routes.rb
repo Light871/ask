@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  concern :commentable do
+    resources :comments, only: %i[create destroy]
+  end
+
   scope '(:locale)', locale: /#{I18n.available_locales.join("|")}/ do
     root 'questions#index'
 
@@ -8,14 +12,11 @@ Rails.application.routes.draw do
 
     resources :users, only: %i[new create edit update]
 
-    resources :questions do
-      resources :comments, only: %i[create destroy]
+    resources :questions, concerns: :commentable do
       resources :answers, except: %i[new show]
     end
 
-    resources :answers, except: %i[new show] do
-      resources :comments, only: %i[create destroy]
-    end
+    resources :answers, except: %i[new show], concerns: :commentable
 
     namespace :admin do
       resources :users, only: %i[index create]
