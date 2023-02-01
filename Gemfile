@@ -5,14 +5,14 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.2.0'
 
+gem 'cssbundling-rails', '~> 1.1'
 gem 'jbuilder', '~> 2.7'
+gem 'jsbundling-rails', '~> 1.1'
 gem 'pg', '~> 1.1'
+gem 'propshaft', '~> 0.6'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 7.0.4'
 gem 'turbolinks', '~> 5'
-gem 'propshaft', '~> 0.6'
-gem 'jsbundling-rails', '~> 1.1'
-gem 'cssbundling-rails', '~> 1.1'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
@@ -40,6 +40,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'bullet'
   gem 'listen', '~> 3.3'
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'rubocop', '~> 1.44', require: false
@@ -47,7 +48,6 @@ group :development do
   gem 'rubocop-rails', '~> 2.17', require: false
   gem 'spring'
   gem 'web-console', '>= 4.1.0'
-  gem 'bullet'
 end
 
 group :test do
