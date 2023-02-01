@@ -10,16 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_26_132833) do
-
+ActiveRecord::Schema[7.0].define(version: 2023_01_31_123438) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "answers", force: :cascade do |t|
     t.text "body", null: false
     t.bigint "question_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
     t.index ["question_id"], name: "index_answers_on_question_id"
     t.index ["user_id"], name: "index_answers_on_user_id"
@@ -30,8 +29,8 @@ ActiveRecord::Schema.define(version: 2023_01_26_132833) do
     t.string "commentable_type", null: false
     t.bigint "commentable_id", null: false
     t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
@@ -39,8 +38,8 @@ ActiveRecord::Schema.define(version: 2023_01_26_132833) do
   create_table "question_tags", force: :cascade do |t|
     t.bigint "question_id", null: false
     t.bigint "tag_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["question_id", "tag_id"], name: "index_question_tags_on_question_id_and_tag_id", unique: true
     t.index ["question_id"], name: "index_question_tags_on_question_id"
     t.index ["tag_id"], name: "index_question_tags_on_tag_id"
@@ -49,24 +48,24 @@ ActiveRecord::Schema.define(version: 2023_01_26_132833) do
   create_table "questions", force: :cascade do |t|
     t.string "title", null: false
     t.text "body", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_questions_on_user_id"
   end
 
   create_table "tags", force: :cascade do |t|
     t.string "title"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
     t.string "name"
     t.string "password_digest"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "remember_token_digest"
     t.string "gravatar_hash"
     t.index ["email"], name: "index_users_on_email", unique: true
