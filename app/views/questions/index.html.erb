@@ -9,7 +9,8 @@
   <%= form_with url: questions_path, method: :get do |f| %>
     <div class="mb-3">
       <%= f.collection_select :tag_ids, [], :id, :title, {selected: params[:tag_ids]},
-        multiple: true, required: true, data: {'ajax-url': '/api/tags'} %>
+        multiple: true, required: true,
+        class: 'js-multiple-select js-ajax-select w-100', data: {'ajax-url': '/api/tags'} %>
     </div>
 
     <%= f.submit 'Искать', class: 'btn btn-primary' %>

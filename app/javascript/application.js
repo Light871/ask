@@ -6,6 +6,7 @@ import * as ActiveStorage from "@rails/activestorage"
 import '@popperjs/core'
 import 'bootstrap/js/dist/dropdown'
 import 'bootstrap/js/dist/collapse'
+import './scripts/select'
 
 Rails.start()
 Turbolinks.start()
