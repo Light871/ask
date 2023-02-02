@@ -26,6 +26,7 @@ gem 'rails-i18n', '~> 7'
 gem 'rubyXL', '~> 3.4'
 gem 'rubyzip', '~> 2'
 gem 'valid_email2', '~> 4.0'
+gem 'blueprinter'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
