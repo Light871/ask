@@ -17,6 +17,8 @@ module Admin
       end
     end
 
+    def edit; end
+
     def create
       if params[:archive].present?
         UserBulkService.call params[:archive]
@@ -24,9 +26,6 @@ module Admin
       end
 
       redirect_to admin_users_path
-    end
-
-    def edit
     end
 
     def update

@@ -18,16 +18,16 @@ gem 'turbolinks', '~> 5'
 # Use Active Model has_secure_password
 gem 'activerecord-import', '~> 1.4'
 gem 'bcrypt', '~> 3.1.7'
+gem 'blueprinter'
 gem 'caxlsx', '~> 3.3'
 gem 'caxlsx_rails', '~> 0.6'
 gem 'draper', '~> 4.0'
 gem 'pagy', '~> 6.0'
+gem 'pundit', '~> 2.3'
 gem 'rails-i18n', '~> 7'
 gem 'rubyXL', '~> 3.4'
 gem 'rubyzip', '~> 2'
 gem 'valid_email2', '~> 4.0'
-gem 'blueprinter'
-gem 'pundit', '~> 2.3'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
