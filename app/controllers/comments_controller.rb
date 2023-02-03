@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
     authorize @comment
 
     if @comment.save
-      flash[:success] = 'Success!'
+      flash[:success] = I18n.t('controllers.comments.created')
       redirect_to question_path(@question)
     else
       @comment = @comment.decorate
@@ -25,7 +25,7 @@ class CommentsController < ApplicationController
     authorize @comment
 
     @comment.destroy
-    flash[:success] = 'Success!'
+    flash[:success] = I18n.t('controllers.comments.destroyed')
     redirect_to question_path(@question)
   end
 

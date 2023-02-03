@@ -2,10 +2,39 @@ ru:
   en: "Английский"
   ru: "Русский"
   activerecord:
+    models:
+      user: "Пользователь"
+      question: "Вопрос"
+      answer: "Ответ"
+      comment: "Комментарий"
+      tag: "Тэг"
     attributes:
       question:
         title: "Заголовок"
         body: "Текст"
+      answer:
+        body: "Текст"
+      user:
+        email: "Email"
+        name: "Имя"
+        role: "Роль"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
+        old_password: "Старый пароль"
+      comment:
+        body: "Текст"
+  controllers:
+    questions:
+      created: "Вопрос был успешно создан"
+      updated: "Вопрос был успешно изменен"
+      destroyed: "Вопрос был успешно удален"
+    answers:
+      created: "Ответ был успешно создан"
+      updated: "Ответ был успешно изменен"
+      destroyed: "Ответ был успешно удален"
+    comments:
+      created: "Комментарий был успешно создан"
+      destroyed: "Комментарий был успешно удален"
   pages:
     index:
       title: "Добро пожаловать в AskIt!"

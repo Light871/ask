@@ -15,7 +15,7 @@ class AnswersController < ApplicationController
     @answer = @question.answers.build answer_create_params
 
     if @answer.save
-      flash[:success] = 'Answer created!'
+      flash[:success] = I18n.t('controllers.answers.created')
       redirect_to question_path(@question)
     else
       load_question_answers(do_render: true)
@@ -24,7 +24,7 @@ class AnswersController < ApplicationController
 
   def update
     if @answer.update answer_update_params
-      flash[:success] = 'Answer updated!'
+      flash[:success] = I18n.t('controllers.answers.updated')
       redirect_to question_path(@question, anchor: dom_id(@answer))
     else
       render :edit
@@ -33,7 +33,7 @@ class AnswersController < ApplicationController
 
   def destroy
     @answer.destroy
-    flash[:success] = 'Answer deleted!'
+    flash[:success] = I18n.t('controllers.answers.destroyed')
     redirect_to question_path(@question)
   end
 
