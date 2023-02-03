@@ -27,6 +27,7 @@ gem 'rubyXL', '~> 3.4'
 gem 'rubyzip', '~> 2'
 gem 'valid_email2', '~> 4.0'
 gem 'blueprinter'
+gem 'pundit', '~> 2.3'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
