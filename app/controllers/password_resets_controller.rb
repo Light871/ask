@@ -4,6 +4,8 @@ class PasswordResetsController < ApplicationController
   before_action :require_no_authentication
   before_action :set_user, only: %i[edit update]
 
+  def edit; end
+
   def create
     @user = User.find_by email: params[:email]
     if @user.present?
@@ -15,12 +17,9 @@ class PasswordResetsController < ApplicationController
     redirect_to new_session_path
   end
 
-  def edit
-  end
-
   def update
     if @user.update user_params
-      flash[:success] = "Password changed successfully"
+      flash[:success] = 'Password changed successfully'
       redirect_to new_session_path
     else
       render :edit
@@ -34,11 +33,17 @@ class PasswordResetsController < ApplicationController
   end
 
   def set_user
-    redirect_to(new_session_path, flash: { warning: 'Password reset was failed!' }) and return unless params[:user].present?
+    if params[:user].blank?
+      redirect_to(new_session_path,
+                  flash: { warning: 'Password reset was failed!' }) and return
+    end
 
     @user = User.find_by email: params[:user][:email],
                          password_reset_token: params[:user][:password_reset_token]
 
-    redirect_to(new_session_path, flash: { warning: 'Password reset was failed!' }) unless @user&.password_reset_period_valid?
+    return if @user&.password_reset_period_valid?
+
+    redirect_to(new_session_path,
+                flash: { warning: 'Password reset was failed!' })
   end
 end

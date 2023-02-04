@@ -43,6 +43,7 @@ end
 
 group :development do
   gem 'bullet'
+  gem 'letter_opener'
   gem 'listen', '~> 3.3'
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'rubocop', '~> 1.44', require: false
@@ -50,7 +51,6 @@ group :development do
   gem 'rubocop-rails', '~> 2.17', require: false
   gem 'spring'
   gem 'web-console', '>= 4.1.0'
-  gem 'letter_opener'
 end
 
 group :test do
